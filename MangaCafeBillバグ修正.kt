@@ -87,7 +87,6 @@ class MangaCafeBill(val courseName: String, val timeEntered: ZonedDateTime, val 
         * 延長が発生する分数(例：10分)毎に、深夜時間帯に該当する時刻があるかを一分単位でチェックするforループ。
         * 深夜時間帯であれば、深夜料金を合計に追加。それ以外の場合は通常の延長料金を追加します。
         */
-        DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss", Locale.JAPANESE)
         var count:Int = 0
         while (checkIfNight.isBefore(timeExited)) {
             while (count <= extensionBase) {
